@@ -4,7 +4,7 @@ const footer = document.querySelector("#footer");
 const templateFooter = document.querySelector("#templateFooter");
 const fragment = document.createDocumentFragment();
 
-const carrito = [];
+let carrito = [];
 
 const AgregarProductoCarrito = (e) =>{
  const producto ={
@@ -67,7 +67,7 @@ const btnAumentar = (e) =>{
 
 };
 const btnQuitar = (e) => {
-   eliminar = carrito.filter((item)=>{
+   carrito = carrito.filter((item)=>{
     if (e.target.dataset.fruta === item.titulo) {
         item.cantidad--;
       if (item.cantidad === 0) return;
